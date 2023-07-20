@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <span>CLASES ASIGNADAS</span>
+  <span fxHide.lt-md>Docente: {{ docenteName }}</span>
+  <!-- <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
+    <span *ngIf="gridColumns === 4">Three Columns</span>
+    <span *ngIf="gridColumns === 3">Four Columns</span>
+  </button> -->
+</mat-toolbar>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div [fxFlex]="(70/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let tempClase of clases">
+      <mat-card class="mat-elevation-z4">
+
+       <mat-card-header>
+
+              <span class="uiv-font-black">{{ tempClase.codClase }}</span>
+        <!-- <div class="uiv-card-type">COMUNICACION</div> -->
+          <!-- <mat-card-title>Mountains {{num}}</mat-card-title> -->
+        </mat-card-header>
+        <mat-card-content>
+
+            <span class="tag-curso" >{{ tempClase.niveDesc }}</span>
+            <mat-card-title style="margin-top: 16%;">{{ tempClase.areaDesc }}</mat-card-title>
+            <mat-chip style="margin-top: 5%;">{{ tempClase.yearPer }}</mat-chip>
+            <mat-chip  style="margin-left: 3px; margin-top: 1.5%; background-color: rgb(155, 228, 239);">{{ tempClase.periEduDescPer }}</mat-chip>
+            <mat-chip  style="margin-left: 3px; margin-top: 1.5%; background-color: rgb(209, 232, 107);">{{ tempClase.codGrado }}º {{ tempClase.codSecci }}</mat-chip>
+            <!-- <mat-chip  style="margin-left: 3px; margin-top: 1.5%; background-color: rgb(226, 140, 123);">{{ tempClase.niveDesc }}</mat-chip> -->
+        </mat-card-content>
+        <mat-card-actions>
+          <span class="uiv-btn" (click)="manageStudents(tempClase.idClase)">Ingresar <i class="fa fa-caret-right"></i></span>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

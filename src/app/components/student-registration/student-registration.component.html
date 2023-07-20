@@ -1,0 +1,41 @@
+<div>
+  <button class="btn btn-success" (click)="goToAssignedClasses()">Secciones Asignadas</button>
+</div>
+<form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)">
+  <div>
+    <label for="codigoAlum">DNI:</label><br />
+    <input type="number" required name="codigoAlum" ngModel #codigoAlum="ngModel" /><br />
+  </div>
+
+  <div>
+    <label for="val1NameAlum">Nombre 1:</label><br />
+    <input type="text" required name="val1NameAlum"  ngModel #val1NameAlum="ngModel"/>
+  </div>
+
+  <div>
+    <label for="val2NameAlum">Nombre 2:</label><br />
+    <input type="text" name="val2NameAlum"  ngModel #val2NameAlum="ngModel"/>
+  </div>
+
+  <div>
+    <label for="val3NameAlum">Nombre 3:</label><br />
+    <input type="text" name="val3NameAlum"  ngModel #val3NameAlum="ngModel"/>
+  </div>
+
+  <div>
+    <label for="val4NameAlum">Nombre 4:</label><br />
+    <input type="text" name="val4NameAlum"  ngModel #val4NameAlum="ngModel"/>
+  </div>
+
+  <div>
+    <label for="varLastPatAlum">Apellido Paterno</label><br />
+    <input type="text" required name="varLastPatAlum"  ngModel #varLastPatAlum="ngModel"/>
+  </div>
+
+  <div>
+    <label for="valLastMatAlum">Apellido Materno</label><br />
+    <input type="text" required name="valLastMatAlum"  ngModel #valLastMatAlum="ngModel"/>
+  </div>
+
+  <input type="submit" value="Submit">
+</form>

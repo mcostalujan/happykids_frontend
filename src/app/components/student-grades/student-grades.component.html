@@ -1,0 +1,106 @@
+
+<!-- <body style="background-color: transparent;" [ngStyle]="{'filter':modalOpened === true ? 'blur(15px)' : 'none'}"> -->
+<main id="main" class="output" >
+  <div class="ac-card">
+    <div class="ac-card-image">
+      <img src="/assets/male_student.png">
+    </div>
+    <div class="ac-card-info">
+      <p>
+         <strong id="name" style="text-transform: uppercase;">{{ alumnoActual.var1NameAlum}} {{ alumnoActual.varLastPatAlum }} {{ alumnoActual.varLastMatAlum }}</strong><br>
+         <span class="tag-tags">- CÓDIGO: </span> <mat-chip  style="margin-top: 5%; background-color: rgb(155, 228, 239);">{{ alumnoActual.codigoAlum}}</mat-chip>
+         <BR>
+          <span class="tag-tags"> - GRADO/SECCION: </span> <mat-chip  style="margin-top: 3%; background-color: rgb(239, 155, 163);">{{ alumnoActual.codGrado}}º {{alumnoActual.codSecci}}</mat-chip>
+         <BR>
+          <span class="tag-tags" >- NIVEL: </span> <mat-chip  style="margin-top: 3%; background-color: rgb(180, 237, 186);">{{ alumnoActual.niveDesc }}</mat-chip>
+      </p>
+      <p id="date" class="ac-card-date"></p>
+    </div>
+
+  </div>
+
+
+</main>
+
+    <mat-toolbar>
+      <span>COMPETENCIAS A EVALUAR</span>
+    </mat-toolbar>
+    <div class="content">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div [fxFlex]="(70/3) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let tempDetalleAcompe of detallesAlumnoCompetenciaActual; let i= index">
+          <mat-card class="mat-elevation-z4">
+
+           <mat-card-header>
+            </mat-card-header>
+            <mat-card-content>
+
+                <span class="tag-curso" >Competencia {{ i + 1 }}</span>
+                <mat-card-title style="margin-top: 16%;">{{tempDetalleAcompe.descCompe}}</mat-card-title>
+                <mat-chip style="margin-top: 5%;">PROMEDIO</mat-chip>
+                <mat-chip  style="margin-left: 3px; margin-top: 1.5%; background-color: rgb(239, 239, 155);">TOTAL NOTAS</mat-chip>
+                <!-- <mat-chip  style="margin-left: 3px; margin-top: 1.5%; background-color: rgb(209, 232, 107);">SDFFSD</mat-chip> -->
+            </mat-card-content>
+            <mat-card-actions>
+              <span class="uiv-btn" (click)="openGradingModal(tempDetalleAcompe.descCompe, tempDetalleAcompe.idAcompe)" >Ingresar Notas <i class="fas fa-pen-alt"></i></span>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+  <!-- </body> -->
+
+  <button [hidden]="true" type="button" id="openCapacidadesModal" data-toggle="modal"
+  data-backdrop="static" data-keyboard="false" data-target="#modalCart"></button>
+
+
+
+
+
+
+ <div class="modal fade"  id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">{{descCompe}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Capacidad</th>
+              <th style="max-width: 3px;">Nota</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tempDetalleAlnoc of detallesAlumnoCapacidadActual; let i= index">
+              <th>{{i+1}}</th>
+              <td>{{tempDetalleAlnoc.capacidadDesc}}</td>
+              <td>
+                <div><input [(ngModel)]="tempDetalleAlnoc.notaCapacidad" type="number"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <!--Footer-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary" (click)="updateNotaCapa()">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal: modalCart -->
+
+
+<!-- </body> -->

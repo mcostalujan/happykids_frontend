@@ -1,0 +1,31 @@
+<br />
+<table border="1" align="center">
+  <thead>
+    <tr>
+      <th>Código de clase</th>
+      <th>Estatus</th>
+      <th>Periodo</th>
+      <th>Nivel</th>
+      <th>Grado</th>
+      <th>Sección</th>
+      <th>Área</th>
+      <th>Última modificación</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tempClase of clases">
+      <td>{{ tempClase.codClase }}</td>
+      <td>{{ tempClase.estatus }}</td>
+      <td>{{ tempClase.periEduDescPer }}</td>
+      <td>{{ tempClase.niveDesc }}</td>
+      <td>{{ tempClase.codGrado }}</td>
+      <td>{{ tempClase.codSecci }}</td>
+      <td>{{ tempClase.areaDesc }}</td>
+      <td>17/06/2023 10:00:00</td>
+      <td>
+        <a style="color: blue" (click)="goToAssignedCourses()">Ver más</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

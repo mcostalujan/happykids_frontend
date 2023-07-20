@@ -1,0 +1,58 @@
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+
+.uiv-font-black{
+  color: #fff !important;
+  background-color: #293e5f;
+  position: absolute;
+  right: 4%;
+  padding: 1px 6px 1px 6px;
+  border-radius: 3px;
+}
+
+
+.tag-curso{
+  position: absolute;
+  color: #a7a0a0;
+  margin-top: 7%;
+}
+
+
+.uiv-btn {
+right: 4%;
+position: absolute;
+color: #323232;
+text-transform: uppercase;
+font-size: 0.65vw;
+transition-duration: 0.4s;
+}
+
+.uiv-btn:hover {
+  background-color: #f1efef;
+  color: black;
+  border-radius: 3px;
+  padding: 4px 4px 4px 4px;
+  cursor: pointer;
+  opacity: 1;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/*
+.mat-elevation-z4:hover{
+  border: #293e5f;
+  border-top-style: solid;
+} */

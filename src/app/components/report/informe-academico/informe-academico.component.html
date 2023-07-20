@@ -1,0 +1,43 @@
+<div class="drop-container">
+    <form>
+
+      <div class="dropdown-container">
+        <div class="nivel">
+
+          <select name="idNivel" required [(ngModel)]="idNivelActual" class="form-control" (change)="loadGradosByNivel()">
+            <option *ngFor="let nivel of niveles" [ngValue]="nivel.idNive"> {{ nivel.niveDesc }} </option>
+          </select>
+
+        </div>
+        <div class="grado">
+
+          <select name="idGrado" required [(ngModel)]="idGradoActual" class="form-control" (change)="loadSeccionesByGradoAndNivel()">
+            <option *ngFor="let grado of grados" [ngValue]="grado.idGrado"> {{ grado.gradoDesc }} </option>
+          </select>
+
+        </div>
+        <div class="seccion">
+
+          <select name="idSeccion" required [(ngModel)]="idSeccionActual" class="form-control">
+            <option *ngFor="let seccion of secciones" [ngValue]="seccion.idSeccion"> {{ seccion.secciDesc }} </option>
+          </select>
+
+        </div>
+
+        <div class="year">
+
+          <select name="idSeccion" required [(ngModel)]="yearActual" class="form-control">
+            <option *ngFor="let year of years" [ngValue]="year"> {{ year }} </option>
+          </select>
+
+        </div>
+      </div>
+
+
+    </form>
+    <div class="action">
+      <button class="btn btn-danger" (click)="manageEstudiantesByNivelGradoSecciYear()">Ver Lista Alumnos</button>
+      <!-- <button (click)="handleResetClick()">Reset</button> -->
+    </div>
+
+  </div>
